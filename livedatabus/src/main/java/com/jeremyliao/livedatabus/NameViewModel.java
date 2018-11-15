@@ -23,5 +23,9 @@ public class NameViewModel extends ViewModel {
         return mCurrentName;
     }
 
-
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        System.out.println("---onClearedonClearedonCleared-----------------------------------------------------");
+    }
 }

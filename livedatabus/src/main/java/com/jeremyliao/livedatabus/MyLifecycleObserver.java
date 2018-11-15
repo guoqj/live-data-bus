@@ -19,7 +19,6 @@ public class MyLifecycleObserver  implements GenericLifecycleObserver {
 
     @Override
     public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-        ;
         System.out.println(source.getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.DESTROYED));
         System.out.println(source.getLifecycle().getCurrentState()+"-------------------");
     }

@@ -13,25 +13,29 @@ public class TestA extends AppCompatActivity {
     private NameViewModel mModel;
     TextView textView;
     Test test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
-        textView=findViewById(R.id.test);
+        textView = findViewById(R.id.test);
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String anotherName = "John Doe";
-               // mModel.getCurrentName().setValue(anotherName);
+                // mModel.getCurrentName().setValue(anotherName);
 //                Teeeee.get().getChannel("ddd").setValue("rrrrdddd");
-                test.getCurrentName().setValue("ddddddddd");
+//                test.getCurrentName().setValue("ddddddddd");
+                ITest test = TypeDemo.create(ITest.class);
+                System.out.println(test.getTest(90, 30).toStirng());
+                System.out.println(test.getTestsss(90).toStirng());
             }
         });
-        test=new Test();
+        test = new Test();
         test.getCurrentName().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                System.out.println("s===============>"+s);
+                System.out.println("s===============>" + s);
             }
         });
         // Other code to setup the activity...
@@ -49,14 +53,16 @@ public class TestA extends AppCompatActivity {
 
         // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
         mModel.getCurrentName().observe(this, nameObserver);
+        TypeDemo.test("dddd");
 
-
-        Teeeee.get().getChannel("ddd",String.class).observe(this, new Observer<String>() {
+        Teeeee.get().getChannel("ddd", String.class).observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
         });
+
+
     }
 
     @Override

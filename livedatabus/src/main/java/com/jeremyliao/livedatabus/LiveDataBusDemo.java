@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.widget.Toast;
 
 import com.jeremyliao.livedatabus.databinding.ActivityLiveDataBusDemoBinding;
@@ -38,7 +39,6 @@ public class LiveDataBusDemo extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_live_data_bus_demo);
         binding.setHandler(this);
         binding.setLifecycleOwner(this);
-
         LiveDataBus.get()
                 .with("key1", String.class)
                 .observe(this, new Observer<String>() {
@@ -68,6 +68,11 @@ public class LiveDataBusDemo extends AppCompatActivity {
                         receiveCount++;
                     }
                 });
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 
     @Override
