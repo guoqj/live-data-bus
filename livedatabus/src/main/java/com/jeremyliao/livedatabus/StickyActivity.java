@@ -67,5 +67,6 @@ public class StickyActivity extends AppCompatActivity {
         LiveDataBus.get()
                 .with("sticky_key", String.class)
                 .removeObserver(observer);
+
     }
 }
