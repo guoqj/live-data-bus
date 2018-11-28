@@ -68,6 +68,7 @@ public class LiveDataBusDemo extends AppCompatActivity {
                         receiveCount++;
                     }
                 });
+        //sssssssss
     }
 
     @Override

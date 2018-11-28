@@ -53,7 +53,8 @@ public class StickyActivity extends AppCompatActivity {
             }
         });
         getLifecycle().addObserver(new MyLifecycleObserver());
-        //test
+        //testddddddddddddddd
+        //dddddddddd
     }
 
     @Override
