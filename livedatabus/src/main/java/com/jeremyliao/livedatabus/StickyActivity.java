@@ -64,9 +64,10 @@ public class StickyActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        System.out.println("2222222222222222222");
         LiveDataBus.get()
                 .with("sticky_key", String.class)
                 .removeObserver(observer);
-
+        System.out.println("3333333333333");
     }
 }
